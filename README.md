@@ -64,6 +64,26 @@ The adapter is a read-only projection and never downloads Suno tracks or modifie
 
 **Next gate:** review source identity and rights policy, define versioned canonical entities (character, setting, relationship, plot thread), then build opt-in bank↔navigator and character-continuity interfaces. No real-person seed harvesting.
 
+## Character Registry 003 — the next organ
+
+**New in the stacked experimental branch:** [Character Registry 003 design and constraints](docs/CHARACTER-REGISTRY-003.md).
+
+```bash
+npm test
+npm run characters               # stable character IDs and candidate profiles
+npm run characters:echoes        # literal overlapping motifs across fictional worlds
+npm run characters:threads       # same-world relationship passengers
+npm run characters:demo          # cross-world ECHO; explicitly no crossover
+npm run characters:report > registry-proof.html
+node cli/characters.mjs bank > character-bank-import.json
+```
+
+Open `registry-proof.html` locally as a **read-only, searchable, phone-friendly character atlas**. Open `web/index.html` locally and choose **BANK → IMPORT** to load `character-bank-import.json` into the editable Story DNA Bank. The exported 11 candidate cards are four people, two setting labels, two relationships, two unanswered threads and one art-style variant. The import does **not** prove canon, rights or shared universe.
+
+The first specimen enrolls Neri, Tallow, Renji and **The Waiting Rat (provisional story shorthand)**; all four are **fictional development interpretations of existing unadmitted story proposals**, never authenticated character reference sheets. Every profile has an originating-world anchor, permanent character ID, separately versioned content ID, visual anchors, constraints, variants and recorded scene appearances. A suggested cross-world resemblance remains an **ECHO** until separately authorized.
+
+The GitHub Actions `Story DNA Verify` workflow produces a downloadable HTML atlas and Bank-import JSON as the `story-dna-character-registry-003` artifact. This is an offline proof, **not a deployed live website**.
+
 ## Initial design
 
 A **relationship passenger** records `desire → relationship → conflict → choice → consequence → unresolved remainder`, bounded to an attributable source and revision. A recombination can propose an `ECHO` (analogy), `FORK` (independent narrative descendant), or permission-gated `ENCOUNTER` (proposed fictional crossover). Both original sources retain their own identities.

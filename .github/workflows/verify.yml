@@ -15,3 +15,13 @@ jobs:
       - run: npm test
       - run: npm run demo > /tmp/story-dna-echo.json
       - run: npm run fork > /tmp/story-dna-fork.json
+      - run: npm run characters:demo > /tmp/characters-echo.json
+      - run: npm run characters:report > story-dna-character-registry-003.html
+      - run: node cli/characters.mjs bank > story-dna-character-bank-import-003.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: story-dna-character-registry-003
+          path: |
+            story-dna-character-registry-003.html
+            story-dna-character-bank-import-003.json
+          retention-days: 30

@@ -208,7 +208,7 @@ $('download').addEventListener('click',()=>{
    originalWorldChanged:false,canonicalAdmission:false,publication:false,
    instruction:'Validate with Story DNA CLI; this browser output is an unsigned proposed review, not an event or publication.'
   };
-  downloadJson('story-dna-${escapeHtml(character.displayName).toLowerCase().replace(/[^a-z0-9-]/g,'-')}-visual-review-draft.json',draft);
+  downloadJson('story-dna-'+DATA.characterName.toLowerCase().replace(/[^a-z0-9-]/g,'-')+'-visual-review-draft.json',draft);
   $('result').textContent='Downloaded unsigned HOLD draft; artwork files remain on this device.';
  }catch(e){$('result').textContent='EXPORT REFUSED: '+e.message;}
 });

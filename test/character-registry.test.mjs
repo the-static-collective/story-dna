@@ -20,7 +20,7 @@ test('character identities stable across rename and display fields; profiles rem
     assert.equal(c.classification,'CANDIDATE');
   }
   const neri=r.characters.find(c=>c.displayName==='Neri Vale');
-  const renamed=makeCharacter({...neri,displayName:'Neri — an alternate display name'});
+  const renamed=makeCharacter({...neri,displayName:'Neri — an alternate display name',profileId:undefined});
   assert.equal(neri.characterId,renamed.characterId);
   assert.notEqual(neri.profileId,renamed.profileId);
 });
@@ -55,7 +55,7 @@ test('dangling appearance, wrong variant, stale profile cannot attach',()=>{
   const r=specimen();
   const o=copy(r);o.appearances[0].characterId='sdna:character:'+'0'.repeat(64);delete o.appearances[0].appearanceId;
   assert.throws(()=>buildRegistry(o),/unknown or stale/);
-  const v=copy(r);v.appearances[0].variantId=v.variants[0].variantId;delete v.appearances[0].appearanceId;
+  const v=copy(r);const unrelated=v.appearances.find(a=>a.characterId!==v.variants[0].characterId);unrelated.variantId=v.variants[0].variantId;delete unrelated.appearanceId;
   assert.throws(()=>buildRegistry(v),/not same character/);
   const stale=copy(r);stale.variants[0].baseProfileId='sha256:'+'a'.repeat(64);delete stale.variants[0].variantRevisionId;
   assert.throws(()=>buildRegistry(stale),/unknown or stale/);
@@ -63,7 +63,7 @@ test('dangling appearance, wrong variant, stale profile cannot attach',()=>{
 test('crossworld relationship can never masquerade as a declared canonical bond',()=>{
   const r=specimen();
   const c=copy(r);
-  c.bonds[0].toCharacterId=r.characters.find(ch=>ch.displayName==='Renji').characterId;
+  const orig=c.bonds[0];const other=r.characters.find(ch=>ch.world!==orig.world);orig.toCharacterId=other.characterId;
   delete c.bonds[0].bondId;
   assert.throws(()=>buildRegistry(c),/cross-world character bond forbidden/);
 });

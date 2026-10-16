@@ -3,7 +3,7 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createLaboratorySnapshot, recombineElements, probeEdit } from "../src/laboratory.mjs";
+import { createLaboratorySnapshot, recombineElements, probeEdit } from "./orchestration.mjs";
 import { validateThread, composeRelationship, navigationProjection, panelLoomDraft } from "../src/relationship-passenger.mjs";
 
 const root=dirname(fileURLToPath(import.meta.url));

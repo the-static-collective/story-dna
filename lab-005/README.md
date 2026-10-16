@@ -19,7 +19,7 @@ No `npm install`, xAI account, API keys, database or network connection are requ
 ## What the rescue already does
 
 - Read all 42 original source-derived narrative elements, worlds and characters from the 004 development branch and render an interactive phone-sized catalog.
-- ECHO / FORK / ENCOUNTER recombinations use the actual, source-bound Story DNA engine, including explicit refusals and content seals.
+- ECHO / FORK / ENCOUNTER proposals use the source-bound `src/relationship-passenger.mjs` engine, including explicit refusals and content seals.
 - Save/export readings and a 50-entry browser-local journal.
 - Create local characters, worlds and six-field relationship threads with explicit provenance notes. Export/import as `story-dna/lab-005-local-bank/v1`. Nothing is automatically admitted or merged into canonical registry 003.
 - Recombine two local relationship threads through `src/relationship-passenger.mjs` **only after explicit public-fiction and analogy permission declarations**. Cross-character ENCOUNTER is not automatically authorized. Bank imports reset clearance to false.
@@ -32,4 +32,4 @@ The original Grok generated app used a separate React/TanStack runtime. This con
 
 ## Future handoff to Grok or another builder
 
-Please inspect `lab-005/`, `src/laboratory.mjs` and `src/relationship-passenger.mjs` before proposing a port to a deployed frontend. Keep `HOLD`, selection ≠ evidence, and proposal ≠ admission. Preserve source identity, explain any rights-gate changes and commit work to an experiment branch, not main.
+Please inspect `lab-005/orchestration.mjs`, `src/relationship-passenger.mjs` and the fixture sources before proposing a port to a deployed frontend. Keep `HOLD`, selection ≠ evidence, and proposal ≠ admission. Preserve source identity, explain any rights-gate changes and commit work to an experiment branch, not main.

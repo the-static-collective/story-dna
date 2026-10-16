@@ -51,7 +51,7 @@ node adapters/sia/cli.mjs \
   fixtures/sia/a-week-together.observation.json > bank-import.json
 ```
 
-This generates **eleven title-derived motif cards** for the local `static-story-dna-bank/v1` browser app from the October 13 album observations. These are *not* inferred lyrics, characters, or plot; they require review before use. The offline [Story DNA Bank 001 prototype](https://github.com/the-static-collective/SIA/pull/5) and its browser importer were developed separately and are not yet served from this repository.
+This generates **eleven title-derived motif cards** for the local `static-story-dna-bank/v1` browser app from the October 13 album observations. These are *not* inferred lyrics, characters, or plot; they require review before use. The offline **Story DNA Bank 001** browser specimen is now preserved at [`web/index.html`](web/index.html), with an accompanying [`web/README.md`](web/README.md). Open that HTML file locally to import the generated JSON under **BANK → IMPORT**. It is **not live-deployed**; the two experiments remain separate code paths while their schema contract is reconciled.
 
 The adapter is a read-only projection and never downloads Suno tracks or modifies SIA/Vault, STORYSHIP, or lemonPRESS.
 

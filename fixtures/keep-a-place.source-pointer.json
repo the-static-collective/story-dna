@@ -1,0 +1,42 @@
+{
+  "schema": "story-dna/local-song-source-pointer/v0",
+  "title": "Keep a Place for Me",
+  "creditedArtistTag": "thestaticcollective",
+  "sourceFile": {
+    "mediaType": "audio/mpeg",
+    "sizeBytes": 4586389,
+    "durationSeconds": 213.12,
+    "sha256": "7f16ead290a86a5997e714e1280befe282b4047c1d40de07e36849521cd304d1"
+  },
+  "custody": {
+    "basis": "owner-provided MP3 attached to a ChatGPT conversation on 2026-10-16; source file examined locally, not copied into public Git",
+    "releasePermission": "not established",
+    "externalTrackId": "unknown; do not infer a Suno ID from a filename or title",
+    "sourceProvenance": "local media-byte digest, duration and embedded title/artist tags observed",
+    "lyricsPubliclyAdmitted": false,
+    "humanSubjectIdentity": "not asserted; story characters are invented"
+  },
+  "observedCreativeMaterial": {
+    "sonicTexture": [
+      "close conversational vocal",
+      "repeating warm plucked-string accompaniment",
+      "soft grounded rhythmic entrance",
+      "intimate quieter passage near the end",
+      "warm rhythmic return in the closing section"
+    ],
+    "objectMotifs": [
+      "kettle near a window",
+      "rain against metal",
+      "loose cupboard hinge",
+      "worn cup",
+      "old clock skipping a beat",
+      "flour sleeve",
+      "porch step and garden",
+      "mail under a sugar tin",
+      "shelf of labeled jars",
+      "hall light and spare key"
+    ],
+    "emotionalArc": "household details → offered attention → safe return without explanation → a place kept open",
+    "basis": "Direct review of user-uploaded audio together with the text in the current conversation; non-verbatim public-safe paraphrase. No inference of autobiographical events."
+  }
+}

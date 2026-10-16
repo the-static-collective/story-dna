@@ -15,6 +15,9 @@
     "characters:echoes": "node cli/characters.mjs echoes",
     "characters:threads": "node cli/characters.mjs threads",
     "characters:demo": "node cli/characters.mjs echo-bonds 325",
-    "characters:report": "node cli/characters.mjs report"
+    "characters:report": "node cli/characters.mjs report",
+    "mirror": "node cli/visual.mjs workbench Renji",
+    "mirror:sheet": "node cli/visual.mjs sheet Renji",
+    "mirror:handoff": "node cli/visual.mjs handoff Renji RENJI_JP_RELAY_COLOR_001"
   }
 }

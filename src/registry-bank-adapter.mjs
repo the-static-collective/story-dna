@@ -14,9 +14,16 @@ export function registryToBankExport(raw) {
     throw new TypeError('Bank export refused: nonpublic source objects must be separately cleared');
   const byId=new Map(r.characters.map(c=>[c.characterId,c]));
   const cards=[];
-  const card=(id,kind,name,world,detail,drive,source,status)=>({
-    id,kind,name,world,detail,drive,source,status,custom:true
-  });
+  const card=(id,kind,name,world,detail,drive,source,status)=>{
+    const limits={id:140,name:120,world:100,detail:600,drive:450,source:500,status:300};
+    const data={id,kind,name,world,detail,drive,source,status};
+    for(const [field,max] of Object.entries(limits)){
+      if(typeof data[field]!=='string'||!data[field].trim()||data[field].length>max)
+        throw new TypeError('Bank card '+field+' exceeds safe import limits; refusing silent truncation');
+    }
+    if(!/^https:\/\/[^\\s]+$/.test(source))throw new TypeError('Bank export requires an HTTPS public source locator');
+    return {...data,custom:true};
+  };
   for(const c of r.characters)cards.push(card(
     c.characterId,'person',c.displayName,c.world,
     `PROPOSAL PROFILE · ${c.visual.silhouette} · ${c.narrative.constraint}`,

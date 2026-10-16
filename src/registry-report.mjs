@@ -10,6 +10,12 @@ const link = ({locator}) => /^https:\/\/[^\s<>"']+$/.test(locator)
 
 export function renderRegistryHtml(raw) {
   const r=buildRegistry(raw);
+  if (r.characters.some(c => c.source.visibility !== 'public') ||
+      r.variants.some(v => v.source.visibility !== 'public') ||
+      r.appearances.some(a => a.source.visibility !== 'public') ||
+      r.bonds.some(b => b.source.visibility !== 'public')) {
+    throw new Error('Report export refused: registry includes nonpublic sources. Export a separately cleared public subset.');
+  }
   const suggestions=suggestEchoes(r);
   const nameById=new Map(r.characters.map(c=>[c.characterId,c.displayName]));
   const cards=r.characters.map(c=>{

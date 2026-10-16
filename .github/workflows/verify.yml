@@ -25,3 +25,15 @@ jobs:
             story-dna-character-registry-003.html
             story-dna-character-bank-import-003.json
           retention-days: 30
+
+      - run: node cli/visual.mjs workbench Renji > story-dna-character-mirror-004.html
+      - run: node cli/visual.mjs sheet Renji > story-dna-renji-visual-sheet-004.json
+      - run: node cli/visual.mjs handoff Renji > story-dna-renji-style-handoff-004.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: story-dna-character-mirror-004
+          path: |
+            story-dna-character-mirror-004.html
+            story-dna-renji-visual-sheet-004.json
+            story-dna-renji-style-handoff-004.json
+          retention-days: 30

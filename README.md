@@ -84,6 +84,23 @@ The first specimen enrolls Neri, Tallow, Renji and **The Waiting Rat (provisiona
 
 The GitHub Actions `Story DNA Verify` workflow produces a downloadable HTML atlas and Bank-import JSON as the `story-dna-character-registry-003` artifact. This is an offline proof, **not a deployed live website**.
 
+## Character Mirror 004 — exact image candidates, same character
+
+The visual continuity proposal adds a local, phone-friendly two-image comparator. It keeps the permanent **character ID** anchored in Character Registry 003 while allowing many independent style-bound **candidate appearance** renders.
+
+```sh
+npm test
+npm run mirror > character-mirror.html
+npm run mirror:sheet
+npm run mirror:handoff
+```
+
+Open `character-mirror.html` locally, select a source/reference image if you have the rights to examine it, select your candidate art, and compare them side-by-side or using an opacity slider. The browser calculates exact local file SHA-256 digests (no upload), prompts you to observe each declared anchor, and exports an **unsigned HOLD review draft**. Process that JSON with `node cli/visual.mjs review-draft <file.json>` to produce a source-bound, inspected-but-unauthenticated review packet.
+
+The current Renji visual profile is a **proposal without a verified image reference**. An image selected by an operator is not automatically authenticated as a canonical character sheet; the tool does **not** automatically judge visual consistency or grant cross-project publication permission. Its two style options refer to the lemonPRESS [Manga Style Profile 001 draft](https://github.com/the-static-collective/lemonPRESS/pull/45) at an exact commit. No model or image renderer is called.
+
+Read [Character Mirror 004 — contract, limits and tests](docs/CHARACTER-MIRROR-004.md). A GitHub Actions artifact contains the ready-to-open HTML and JSON sheet/handoff.
+
 ## Initial design
 
 A **relationship passenger** records `desire → relationship → conflict → choice → consequence → unresolved remainder`, bounded to an attributable source and revision. A recombination can propose an `ECHO` (analogy), `FORK` (independent narrative descendant), or permission-gated `ENCOUNTER` (proposed fictional crossover). Both original sources retain their own identities.

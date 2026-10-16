@@ -22,6 +22,85 @@ Story DNA is an independent creative instrument for preserving fictional particu
 
 The engine deliberately separates **source/observation** from **interpretation**, **relationship analogy** from **character crossover**, and **proposal** from **admission**. Human beings' private autobiographical facts are not automatically fictional characters, seeds or remixable content.
 
+
+## Try the working prototype
+
+Requires **Node.js 22+**, no runtime dependencies.
+
+```bash
+npm test
+npm run demo       # ECHO candidate + read-only navigator + Panel Loom draft
+npm run fork       # independent fictional descendant
+node cli/story-dna.mjs encounter 325  # expected REFUSAL on uncleared characters
+```
+
+The `echo` and `fork` commands return source-bound `story-dna/specimen-packet/v0` JSON containing:
+- two independently identified fictional relationship ancestors;
+- a repeatable five-beat candidate, with `HOLD` posture;
+- two differently framed navigator interpretations (read-only STORYSHIP-inspired projection; **not** an actual Storyship voyage event);
+- an editable `panel-loom/v1` manga draft;
+- no character transfer, canon mutation, or release.
+
+Use exact-output-safe redirection (`> proposal.json`) only for a location you intend to write.
+
+### Feed SIA album metadata into the offline seed bank
+
+```bash
+node adapters/sia/cli.mjs \
+  fixtures/sia/blue-night-morning.observation.json \
+  fixtures/sia/a-week-together.observation.json > bank-import.json
+```
+
+This generates **eleven title-derived motif cards** for the local `static-story-dna-bank/v1` browser app from the October 13 album observations. These are *not* inferred lyrics, characters, or plot; they require review before use. The offline **Story DNA Bank 001** browser specimen is now preserved at [`web/index.html`](web/index.html), with an accompanying [`web/README.md`](web/README.md). Open that HTML file locally to import the generated JSON under **BANK → IMPORT**. It is **not live-deployed**; the two experiments remain separate code paths while their schema contract is reconciled.
+
+The adapter is a read-only projection and never downloads Suno tracks or modifies SIA/Vault, STORYSHIP, or lemonPRESS.
+
+## Build status and ownership
+
+- Current branch: `feat/relationship-passenger-002` (awaiting review; unmerged).
+- CI: `.github/workflows/verify.yml`; tests cover stable IDs, source-tamper refusal, privacy gates, fictional-character permissions, read-only navigation and SIA title metadata.
+- First port from SIA PR #5 preserves its origin explicitly; subsequent changes here belong to this independent project.
+- The existing STORYSHIP historical selector, provider launch budget, receipt law and destination customs are unchanged.
+
+**Next gate:** review source identity and rights policy, define versioned canonical entities (character, setting, relationship, plot thread), then build opt-in bank↔navigator and character-continuity interfaces. No real-person seed harvesting.
+
+## Character Registry 003 — the next organ
+
+**New in the stacked experimental branch:** [Character Registry 003 design and constraints](docs/CHARACTER-REGISTRY-003.md).
+
+```bash
+npm test
+npm run characters               # stable character IDs and candidate profiles
+npm run characters:echoes        # literal overlapping motifs across fictional worlds
+npm run characters:threads       # same-world relationship passengers
+npm run characters:demo          # cross-world ECHO; explicitly no crossover
+npm run characters:report > registry-proof.html
+node cli/characters.mjs bank > character-bank-import.json
+```
+
+Open `registry-proof.html` locally as a **read-only, searchable, phone-friendly character atlas**. Open `web/index.html` locally and choose **BANK → IMPORT** to load `character-bank-import.json` into the editable Story DNA Bank. The exported 11 candidate cards are four people, two setting labels, two relationships, two unanswered threads and one art-style variant. The import does **not** prove canon, rights or shared universe.
+
+The first specimen enrolls Neri, Tallow, Renji and **The Waiting Rat (provisional story shorthand)**; all four are **fictional development interpretations of existing unadmitted story proposals**, never authenticated character reference sheets. Every profile has an originating-world anchor, permanent character ID, separately versioned content ID, visual anchors, constraints, variants and recorded scene appearances. A suggested cross-world resemblance remains an **ECHO** until separately authorized.
+
+The GitHub Actions `Story DNA Verify` workflow produces a downloadable HTML atlas and Bank-import JSON as the `story-dna-character-registry-003` artifact. This is an offline proof, **not a deployed live website**.
+
+## Character Mirror 004 — exact image candidates, same character
+
+The visual continuity proposal adds a local, phone-friendly two-image comparator. It keeps the permanent **character ID** anchored in Character Registry 003 while allowing many independent style-bound **candidate appearance** renders.
+
+```sh
+npm test
+npm run mirror > character-mirror.html
+npm run mirror:sheet
+npm run mirror:handoff
+```
+
+Open `character-mirror.html` locally, select a source/reference image if you have the rights to examine it, select your candidate art, and compare them side-by-side or using an opacity slider. The browser calculates exact local file SHA-256 digests (no upload), prompts you to observe each declared anchor, and exports an **unsigned HOLD review draft**. Process that JSON with `node cli/visual.mjs review-draft <file.json>` to produce a source-bound, inspected-but-unauthenticated review packet.
+
+The current Renji visual profile is a **proposal without a verified image reference**. An image selected by an operator is not automatically authenticated as a canonical character sheet; the tool does **not** automatically judge visual consistency or grant cross-project publication permission. Its two style options refer to the lemonPRESS [Manga Style Profile 001 draft](https://github.com/the-static-collective/lemonPRESS/pull/45) at an exact commit. No model or image renderer is called.
+
+Read [Character Mirror 004 — contract, limits and tests](docs/CHARACTER-MIRROR-004.md). A GitHub Actions artifact contains the ready-to-open HTML and JSON sheet/handoff.
+
 ## Initial design
 
 A **relationship passenger** records `desire → relationship → conflict → choice → consequence → unresolved remainder`, bounded to an attributable source and revision. A recombination can propose an `ECHO` (analogy), `FORK` (independent narrative descendant), or permission-gated `ENCOUNTER` (proposed fictional crossover). Both original sources retain their own identities.

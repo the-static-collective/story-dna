@@ -1,0 +1,22 @@
+name: Story DNA Laboratory 005
+on:
+  pull_request:
+    paths:
+      - 'lab-005/**'
+      - 'src/**'
+      - 'fixtures/**'
+      - '.github/workflows/lab-005.yml'
+  push:
+    branches:
+      - 'feat/grok-lab-rescue-005'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check lab-005/server.mjs
+      - run: node --check lab-005/app.js
+      - run: node --test lab-005/test.mjs

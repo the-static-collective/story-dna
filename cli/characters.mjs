@@ -5,6 +5,7 @@ import {
   queryCharacters,suggestEchoes,echoBonds,threadFromBond
 } from '../src/character-registry.mjs';
 import {renderRegistryHtml} from '../src/registry-report.mjs';
+import {registryToBankExport} from '../src/registry-bank-adapter.mjs';
 import {createSpecimenRegistry} from '../fixtures/characters.candidate.mjs';
 const r=createSpecimenRegistry();
 const [operation='list',argument,...remaining]=process.argv.slice(2);
@@ -22,6 +23,7 @@ try {
     case 'search': output(queryCharacters(r,{q:argument??''}));break;
     case 'echoes':output(suggestEchoes(r));break;
     case 'threads':output(r.bonds.map(b=>threadFromBond(r,b.bondId)));break;
+    case 'bank':output(registryToBankExport(r));break;
     case 'echo-bonds':{
       const [a,b]=r.bonds;
       output(echoBonds(r,a.bondId,b.bondId,{seed:argument?Number(argument):325}));break;
@@ -32,6 +34,6 @@ try {
       else process.stdout.write(html);
       break;
     }
-    default:throw Error('Usage: node cli/characters.mjs [list | snapshot | show <name> | search <term> | echoes | threads | echo-bonds [seed] | report [output.html]]');
+    default:throw Error('Usage: node cli/characters.mjs [list | snapshot | show <name> | search <term> | echoes | threads | bank | echo-bonds [seed] | report [output.html]]');
   }
 }catch(e){process.stderr.write(e.message+'\n');process.exit(1);}

@@ -21,7 +21,7 @@ export function registryToBankExport(raw) {
       if(typeof data[field]!=='string'||!data[field].trim()||data[field].length>max)
         throw new TypeError('Bank card '+field+' exceeds safe import limits; refusing silent truncation');
     }
-    if(!/^https:\/\/[^\\s]+$/.test(source))throw new TypeError('Bank export requires an HTTPS public source locator');
+    if(!source.startsWith('https://') || [...source].some(c => c.charCodeAt(0) <= 32))throw new TypeError('Bank export requires an HTTPS public source locator');
     return {...data,custom:true};
   };
   for(const c of r.characters)cards.push(card(

@@ -22,6 +22,48 @@ Story DNA is an independent creative instrument for preserving fictional particu
 
 The engine deliberately separates **source/observation** from **interpretation**, **relationship analogy** from **character crossover**, and **proposal** from **admission**. Human beings' private autobiographical facts are not automatically fictional characters, seeds or remixable content.
 
+
+## Try the working prototype
+
+Requires **Node.js 22+**, no runtime dependencies.
+
+```bash
+npm test
+npm run demo       # ECHO candidate + read-only navigator + Panel Loom draft
+npm run fork       # independent fictional descendant
+node cli/story-dna.mjs encounter 325  # expected REFUSAL on uncleared characters
+```
+
+The `echo` and `fork` commands return source-bound `story-dna/specimen-packet/v0` JSON containing:
+- two independently identified fictional relationship ancestors;
+- a repeatable five-beat candidate, with `HOLD` posture;
+- two differently framed navigator interpretations (read-only STORYSHIP-inspired projection; **not** an actual Storyship voyage event);
+- an editable `panel-loom/v1` manga draft;
+- no character transfer, canon mutation, or release.
+
+Use exact-output-safe redirection (`> proposal.json`) only for a location you intend to write.
+
+### Feed SIA album metadata into the offline seed bank
+
+```bash
+node adapters/sia/cli.mjs \
+  fixtures/sia/blue-night-morning.observation.json \
+  fixtures/sia/a-week-together.observation.json > bank-import.json
+```
+
+This generates **eleven title-derived motif cards** for the local `static-story-dna-bank/v1` browser app from the October 13 album observations. These are *not* inferred lyrics, characters, or plot; they require review before use. The offline [Story DNA Bank 001 prototype](https://github.com/the-static-collective/SIA/pull/5) and its browser importer were developed separately and are not yet served from this repository.
+
+The adapter is a read-only projection and never downloads Suno tracks or modifies SIA/Vault, STORYSHIP, or lemonPRESS.
+
+## Build status and ownership
+
+- Current branch: `feat/relationship-passenger-002` (awaiting review; unmerged).
+- CI: `.github/workflows/verify.yml`; tests cover stable IDs, source-tamper refusal, privacy gates, fictional-character permissions, read-only navigation and SIA title metadata.
+- First port from SIA PR #5 preserves its origin explicitly; subsequent changes here belong to this independent project.
+- The existing STORYSHIP historical selector, provider launch budget, receipt law and destination customs are unchanged.
+
+**Next gate:** review source identity and rights policy, define versioned canonical entities (character, setting, relationship, plot thread), then build opt-in bank↔navigator and character-continuity interfaces. No real-person seed harvesting.
+
 ## Initial design
 
 A **relationship passenger** records `desire → relationship → conflict → choice → consequence → unresolved remainder`, bounded to an attributable source and revision. A recombination can propose an `ECHO` (analogy), `FORK` (independent narrative descendant), or permission-gated `ENCOUNTER` (proposed fictional crossover). Both original sources retain their own identities.

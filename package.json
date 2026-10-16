@@ -10,6 +10,11 @@
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "demo": "node cli/story-dna.mjs echo 325",
-    "fork": "node cli/story-dna.mjs fork 325"
+    "fork": "node cli/story-dna.mjs fork 325",
+    "characters": "node cli/characters.mjs list",
+    "characters:echoes": "node cli/characters.mjs echoes",
+    "characters:threads": "node cli/characters.mjs threads",
+    "characters:demo": "node cli/characters.mjs echo-bonds 325",
+    "characters:report": "node cli/characters.mjs report"
   }
 }

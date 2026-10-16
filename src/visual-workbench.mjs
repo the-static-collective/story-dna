@@ -117,7 +117,7 @@ const readFile=async(file,kind)=>{
  if(!file){clearOne(kind);return}
  if(!mediaAllowed.has(file.type))throw Error('Only PNG/JPEG/WebP image files are supported (correct MIME required).');
  const bytes=await file.arrayBuffer();
- if(!crypto?.subtle?.digest)throw Error('SHA-256 is unavailable in this browser context; this comparator refuses unverifiable bytes.');
+ if(!globalThis.crypto?.subtle?.digest)throw Error('SHA-256 is unavailable in this browser context; this comparator refuses unverifiable bytes.');
  const digest=await crypto.subtle.digest('SHA-256',bytes);
  const hex=[...new Uint8Array(digest)].map(b=>b.toString(16).padStart(2,'0')).join('');
  const image={filename:file.name,sha256:'sha256:'+hex,bytes:file.size,mediaType:file.type};

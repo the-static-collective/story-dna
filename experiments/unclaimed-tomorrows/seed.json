@@ -1,0 +1,53 @@
+{
+  "version": "candidate-story-seed.v0",
+  "identity": "department-of-unclaimed-tomorrows-001",
+  "title": "Department of Unclaimed Tomorrows",
+  "status": "proposed-unadmitted-fiction",
+  "origin": {
+    "source": "user/assistant creative jam",
+    "date": "2026-10-30",
+    "owning_repository": "the-static-collective/story-dna",
+    "revision": "initial proposal"
+  },
+  "logline": "A weary mail carrier delivers receipts for futures that have not happened yet, sometimes centuries too soon.",
+  "character": {
+    "role": "the mail carrier",
+    "name": "intentionally unresolved",
+    "desire": "deliver the undeliverable without lying about the future",
+    "conflict": "uncertain outcomes and a bureaucracy built for certainty",
+    "choice": "deliver the possibility anyway",
+    "consequence": "ordinary people notice an option they hadn't imagined",
+    "unresolved": "who wrote the earliest receipts, and what happens when a letter is refused?"
+  },
+  "setting": {
+    "name": "Window 0",
+    "description": "An office with no settled calendar for undated, unclaimed possibilities."
+  },
+  "motifs": [
+    "wrong-century mail",
+    "loose mailbox hinge",
+    "three speedometers",
+    "oversized postal bag",
+    "extra chair",
+    "stamp: NO PROPHECY IMPLIED"
+  ],
+  "cross_media_candidates": [
+    "microfilm",
+    "radio play",
+    "interactive desk",
+    "pamphlet",
+    "comic",
+    "optional community idea shelf"
+  ],
+  "crossing_rules": [
+    "A fictional dispatch is not a factual forecast.",
+    "A saved draft is not a pledge, proof, or publication.",
+    "No real person's story is imported without permission.",
+    "AI and community adapters require explicit export/consent and separate ownership review."
+  ],
+  "files": [
+    "index.html",
+    "episode-000.md",
+    "README.md"
+  ]
+}
